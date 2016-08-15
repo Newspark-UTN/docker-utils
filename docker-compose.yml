@@ -8,7 +8,7 @@ proxy:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - ./containers/proxy/certs:/etc/nginx/certs
 
-parser:
+cleaner:
     build: ../poc-lsa-model
     environment: 
         - VIRTUAL_HOST=payment.trocafone.local
