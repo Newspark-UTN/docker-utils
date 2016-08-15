@@ -16,7 +16,7 @@ cleaner:
     volumes:
         - ../poc-lsa-model:/opt/newspark
     links:
-        - mongo:mongo
+        - mongo:mongo.newspark.local
 
 mongo:
     image: mongo:3.2.8
