@@ -10,10 +10,22 @@ proxy:
 
 cleaner:
     build: ../poc-lsa-model
-    environment: 
-        - VIRTUAL_HOST=payment.trocafone.local
-        - VIRTUAL_PROTO=http
-    ports:
-        - 8080:8080
+    container_name: cleaner
+    environment:
+        - VIRTUAL_HOST=cleaner.newspark.local
     volumes:
         - ../poc-lsa-model:/opt/newspark
+    links:
+        - mongo:mongo
+
+mongo:
+    image: mongo:3.2.8
+    container_name: mongo_database
+    environment: 
+        - VIRTUAL_HOST=mongo.newspark.local
+        - VIRTUAL_PORT=27017
+    ports:
+        - 27017:27017
+    volumes:
+        - ./tmp/mongo:/data/db
+        - ./containers/mongo:/opt/defaults
