@@ -1,6 +1,6 @@
 # Newspark Docker
 
-Creates an scalable enviroment for trocafone applications.
+Creates an scalable enviroment for newspark applications.
 
 ### Docker Instalation
 
@@ -15,7 +15,7 @@ curl -sSL https://get.docker.com/ | sh
 wget -qO - https://get.docker.com/ | sh
 ```
 
-If you're using Mac Os, follow these [instructions](https://github.com/trocafone/kb/wiki/Local-environment-setup#docker-machine).
+If you're using Mac Os, follow these [instructions](https://github.com/Newspark-UTN/docker-utils/wiki).
 
 If you're using Windows, install [Docker Tools](https://www.docker.com/docker-toolbox).
 
@@ -51,29 +51,23 @@ You may need to reboot/logout to this change make effect.
 It's recommended to have the following file structure:
 
 ```
-Trocafone:
-    \trocafone-docker # This repository
+newspark:
+    \docker-utils # This repository
 ```
 
-Other repositories will be installed at the same level of trocafone-docker
+Other repositories will be installed at the same level of docker-utils
 repository.
 
 ###Installation and provision of the repositories is pretty simple
 
 1- Create a custom docker-compose.yml (docker-compose.yml.example it´s a good start)
 
-2- (OPTIONAL) Add the trocafone-docker directory to your $PATH in your .bashrc or .zshrc or whatever
+2- (OPTIONAL) Add the docker-utils directory to your $PATH in your .bashrc or .zshrc or whatever
 ```
-export PATH=$PATH:/path/to/trocafone-docker
-```
-
-3- Run
-```
-#!bash
-./trocafone install -i
+export PATH=$PATH:/path/to/docker-utils
 ```
 
 ### List commands usage
 ```
-./trocafone
+./newspark
 ```
