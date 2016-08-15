@@ -1,0 +1,19 @@
+proxy:
+    image: jwilder/nginx-proxy
+    container_name: trocafone_proxy
+    ports:
+        - "80:80"
+        - "443:443"
+    volumes:
+        - /var/run/docker.sock:/tmp/docker.sock:ro
+        - ./containers/proxy/certs:/etc/nginx/certs
+
+parser:
+    build: ../poc-lsa-model
+    environment: 
+        - VIRTUAL_HOST=payment.trocafone.local
+        - VIRTUAL_PROTO=http
+    ports:
+        - 8080:8080
+    volumes:
+        - ../poc-lsa-model:/opt/newspark
