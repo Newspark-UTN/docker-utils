@@ -29,3 +29,13 @@ mongo:
     volumes:
         - ./tmp/mongo:/data/db
         - ./containers/mongo:/opt/defaults
+
+scrapper:
+    build: ../Scrappers
+    container_name: scrapper
+    environment: 
+        - VIRTUAL_HOST=scrapper.newspark.local
+    volumes:
+        - ../Scrappers:/opt/newspark
+    links:
+        - mongo:mongo.newspark.local

@@ -8,7 +8,7 @@ function run_command () {
 
 function cli () {
     if [ -z "$1" ]; then
-        run_command "mongo -u newspark -p newspark newspark"
+        run_command "mongo newspark"
     else
         run_command "mongo $*"
     fi

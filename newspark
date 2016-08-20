@@ -21,6 +21,8 @@ function help () {
     out '
 <33>Available commands:<0>
   <32;1>cleaner<0>              Scala job to clean news.<0>
+  <32;1>scrapper<0>             Scrapper job to fetch news.<0>
+  <32;1>mongo<0>                Mongo db.<0>
   <32;1>restart<0>              Restart all containers.<0>
 '
 }
