@@ -1,0 +1,1 @@
+db.news.createIndex( { "link": 1 }, { unique: true } );
