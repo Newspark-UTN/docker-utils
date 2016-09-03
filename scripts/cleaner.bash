@@ -15,7 +15,7 @@ function compile () {
 }
 
 function cleaner () {
-    run_command "spark-submit --class org.edu.utn.newspark.lsa.LSA target/scala-2.11/lsa.jar"
+    run_command "spark-submit --class org.edu.utn.newspark.lsa.LSA target/scala-2.11/lsa.jar ${*}"
 }
 
 function help() {
@@ -41,7 +41,8 @@ function run () {
             exit 0
         ;;
         r|run)
-            cleaner
+            shift;
+            cleaner $*
             exit 0
         ;;
         o|compile)
