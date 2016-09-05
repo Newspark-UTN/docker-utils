@@ -2,6 +2,8 @@
 
 Creates an scalable enviroment for newspark applications.
 
+## RUN './newspark mongo init'!!
+
 ### Docker Instalation
 
 Linux installation is pretty straight foward, just run the following:
