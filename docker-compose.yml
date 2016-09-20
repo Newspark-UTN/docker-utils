@@ -1,6 +1,6 @@
 proxy:
     image: jwilder/nginx-proxy
-    container_name: trocafone_proxy
+    container_name: newspark_proxy
     ports:
         - "80:80"
         - "443:443"
@@ -39,3 +39,25 @@ scrapper:
         - ../Scrappers:/opt/newspark
     links:
         - mongo:mongo.newspark.local
+
+api:
+    build: ../newspark-backend
+    container_name: api
+    environment:
+        - VIRTUAL_HOST=api.newspark.local
+    ports:
+        - 8080:8080
+    volumes:
+        - ../newspark-backend:/opt/newspark
+    links:
+        - mongo:mongo.newspark.local
+
+front:
+    build: ../newspark-frontend
+    container_name: front
+    environment:
+        - VIRTUAL_HOST=front.newspark.local
+    ports:
+        - 80:80
+    volumes:
+        - ../newspark-frontend:/opt/newspark
